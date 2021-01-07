@@ -53,8 +53,11 @@ class ContactData extends ChangeNotifier{
   void editContact({Contact contact, int contactKey}) async{
     var box = await Hive.openBox(_boxName);
 
+    _contacts.clear();
     await box.put(contactKey, contact);
-    _contacts = box.values.toList();
+    box.values.forEach((element) {
+      _contacts.add(element);
+    });
 
     _activeContact = box.get(contactKey);
 

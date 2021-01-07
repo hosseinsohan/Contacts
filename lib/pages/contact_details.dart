@@ -34,7 +34,7 @@ class _ContactDetailsPageState extends State<ContactDetailsPage> {
                 onPressed: () =>
                     Navigator.push(context, MaterialPageRoute(
                         builder: (context) =>
-                            ContactEditPage(currentContact: currentContact)))),
+                            ContactEditPage(currentContact: currentContact))).then((value) => setState((){}))),
             IconButton(icon: Icon(Icons.delete, color: Colors.red,),
                 onPressed: () => _deleteConfirmation(currentContact)),
           ],
@@ -44,11 +44,11 @@ class _ContactDetailsPageState extends State<ContactDetailsPage> {
           padding: EdgeInsets.all(16.0),
           child: Center(
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                getItem(title: "Phone", name: currentContact?.phone??"", color: Colors.grey[300]),
-               // getItem(title: "Join Date", name: DateFormat("yyyy-mm-dd").format(currentContact.joinDate), color: Colors.grey[300]),
-                getItem(title: "Email", name: currentContact?.email??"", color: Colors.grey[300]),
+                getItem(title: "Phone", name: currentContact?.phone??"", ),
+               Divider(),
+                getItem(title: "Email", name: currentContact?.email??"", ),
+                Divider()
               ],
             ),
           ),
@@ -114,10 +114,11 @@ class _ContactDetailsPageState extends State<ContactDetailsPage> {
       height: 36.0,
       color: color,
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(title,
             style: TextStyle(
-                color: Colors.black,
+                color: Colors.grey,
                 fontWeight: FontWeight.bold,
                 fontSize: 16.0
             ),),

@@ -33,6 +33,7 @@ class _ContactEditPageState extends State<ContactEditPage> {
         contact: Contact(
             name: newName, email: newEmail ?? "", phone: newPhone ?? "0"),
         contactKey: widget.currentContact.key);
+    Navigator.pop(context);
   }
 
   final TextEditingController _nameController = TextEditingController();

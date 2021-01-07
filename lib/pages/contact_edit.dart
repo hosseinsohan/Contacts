@@ -1,5 +1,6 @@
+import 'package:contacts/provider/contact_data.dart';
+
 import '../constants.dart';
-import 'file:///C:/Users/NanoTech/Desktop/mercikala/mercikala/contacts/lib/provider/contact_data.dart';
 import 'package:contacts/models/contact.dart';
 import 'package:contacts/widgets/toast.dart';
 import 'package:flutter/material.dart';
@@ -65,7 +66,6 @@ class _ContactEditPageState extends State<ContactEditPage> {
           IconButton(
               icon: Icon(
                 Icons.save,
-                color: Colors.blue,
               ),
               onPressed: () => _editContact())
         ],

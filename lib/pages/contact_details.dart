@@ -1,5 +1,6 @@
+import 'package:contacts/provider/contact_data.dart';
+
 import '../constants.dart';
-import 'file:///C:/Users/NanoTech/Desktop/mercikala/mercikala/contacts/lib/provider/contact_data.dart';
 import 'package:contacts/models/contact.dart';
 import 'package:contacts/pages/contact_edit.dart';
 import 'package:flutter/cupertino.dart';

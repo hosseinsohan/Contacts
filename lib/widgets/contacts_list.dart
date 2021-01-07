@@ -1,4 +1,4 @@
-import 'file:///C:/Users/NanoTech/Desktop/mercikala/mercikala/contacts/lib/provider/contact_data.dart';
+import 'package:contacts/provider/contact_data.dart';
 import 'package:contacts/widgets/ContactTile.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';

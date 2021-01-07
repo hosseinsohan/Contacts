@@ -1,10 +1,10 @@
 import 'package:contacts/models/contact.dart';
+import 'package:contacts/provider/contact_data.dart';
 import 'package:contacts/widgets/toast.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../constants.dart';
-import '../provider/contact_data.dart';
 
 class AddContactPage extends StatefulWidget {
   @override
@@ -29,6 +29,7 @@ class _AddContactPageState extends State<AddContactPage> {
         Contact(
             name: name, email: email ?? "", phone: phone ?? "0"),
         );
+    Navigator.pop(context);
   }
 
   final TextEditingController _nameController = TextEditingController();
@@ -54,11 +55,9 @@ class _AddContactPageState extends State<AddContactPage> {
           IconButton(
               icon: Icon(
                 Icons.save,
-                color: Colors.blue,
               ),
               onPressed: () {
                 _addContact();
-                Navigator.pop(context);
               })
         ],
       ),
